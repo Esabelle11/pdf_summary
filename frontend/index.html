@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Analysis Tool</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📄 Document Analysis Tool</h1>
+            <p class="subtitle">Upload a PDF to extract summary and keywords</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-box" id="uploadBox">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p>Drag and drop your PDF file here</p>
+                    <p class="or-text">or</p>
+                    <input 
+                        type="file" 
+                        id="fileInput" 
+                        accept=".pdf" 
+                        style="display: none;"
+                    >
+                    <button class="btn btn-primary" id="selectFileBtn">Browse Files</button>
+                </div>
+                <div id="fileName" class="file-name"></div>
+            </div>
+
+            <button class="btn btn-submit" id="analyzeBtn" disabled>
+                <span id="btnText">Analyze Document</span>
+                <span id="btnSpinner" class="spinner" style="display: none;"></span>
+            </button>
+
+            <div id="results" class="results" style="display: none;">
+                <div class="result-card">
+                    <h2>📊 Summary</h2>
+                    <p id="summaryText" class="summary-text"></p>
+                </div>
+
+                <div class="result-card">
+                    <h2>🔑 Keywords</h2>
+                    <div id="keywordsList" class="keywords-list"></div>
+                </div>
+
+                <div class="result-card stats">
+                    <h2>📈 Statistics</h2>
+                    <p>Text Length: <strong id="textLength"></strong> characters</p>
+                </div>
+
+                <button class="btn btn-secondary" id="resetBtn">Analyze Another Document</button>
+            </div>
+
+            <div id="errorMsg" class="error-message" style="display: none;"></div>
+        </main>
+
+        <footer>
+            <p>Document Analysis API</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

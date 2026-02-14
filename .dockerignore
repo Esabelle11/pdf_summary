@@ -1,0 +1,45 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+.Python
+.venv
+venv/
+venv311/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.sublime-*
+
+# Tests
+.pytest_cache/
+.coverage
+htmlcov/
+tests/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation
+docs/
+*.md
+LICENSE
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Node
+node_modules/
+npm-debug.log

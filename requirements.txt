@@ -1,0 +1,23 @@
+
+numpy<2
+
+# Core API
+fastapi==0.115.6
+uvicorn==0.34.0
+python-multipart==0.0.20
+pydantic==2.10.6
+
+# NLP / ML
+transformers==4.41.2
+torch==2.2.2
+sentencepiece==0.2.0
+scikit-learn==1.4.2
+
+# PDF processing
+pdfplumber==0.11.5
+
+# Keyword extraction
+keybert==0.8.4
+
+# Language detection (recommended from earlier)
+langdetect==1.0.9
