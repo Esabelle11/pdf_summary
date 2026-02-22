@@ -6,9 +6,11 @@ kw_model = KeyBERT(model='distilbert-base-nli-mean-tokens')
 tokenizer = AutoTokenizer.from_pretrained("facebook/bart-large-cnn")
 
 def summarize_text(text, max_length=300, min_length=50):
+    # print(f"text input: {text}")
 
     # Tokenize first
     inputs = tokenizer(text, truncation=True, max_length=1024)
+    #print(f"Tokenized input: {inputs}")
 
     truncated_text = tokenizer.decode(inputs["input_ids"], skip_special_tokens=True)
 
@@ -18,6 +20,8 @@ def summarize_text(text, max_length=300, min_length=50):
         min_length=min_length,
         do_sample=False
     )
+
+    # print(f"result: {result}")
 
     return result[0]['summary_text']
 
